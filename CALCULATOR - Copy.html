@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .calculator {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .display {
+      width: 100%;
+      height: 60px;
+      background-color: #000;
+      color: #0f0;
+      font-size: 2rem;
+      text-align: right;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 60px);
+      gap: 10px;
+      justify-content: center;
+    }
+
+    button {
+      height: 60px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #444;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #666;
+    }
+
+    .operator {
+      background-color: #ff9500;
+    }
+
+    .equal {
+      background-color: #28a745;
+      grid-column: span 2;
+    }
+
+    .clear {
+      background-color: #dc3545;
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button onclick="clearDisplay()" class="clear">AC</button>
+      <button onclick="appendOperator('/')">/</button>
+      <button onclick="appendOperator('')"></button>
+      <button onclick="appendNumber('7')">7</button>
+      <button onclick="appendNumber('8')">8</button>
+      <button onclick="appendNumber('9')">9</button>
+      <button onclick="appendOperator('-')">-</button>
+      <button onclick="appendNumber('4')">4</button>
+      <button onclick="appendNumber('5')">5</button>
+      <button onclick="appendNumber('6')">6</button>
+      <button onclick="appendOperator('+')">+</button>
+      <button onclick="appendNumber('1')">1</button>
+      <button onclick="appendNumber('2')">2</button>
+      <button onclick="appendNumber('3')">3</button>
+      <button onclick="appendNumber('0')">0</button>
+      <button onclick="appendDot('.')">.</button>
+      <button onclick="backspace()">⌫</button>
+      <button onclick="calculate()" class="equal">=</button>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById('display');
+    let currentInput = '';
+    let resultShown = false;
+
+    function appendNumber(number) {
+      if (resultShown) {
+        currentInput = '';
+        resultShown = false;
+      }
+      currentInput += number;
+      display.innerText = currentInput;
+    }
+
+    function appendOperator(operator) {
+      if (currentInput === '') return;
+      const lastChar = currentInput.slice(-1);
+      if (['+', '-', '*', '/'].includes(lastChar)) {
+        currentInput = currentInput.slice(0, -1) + operator;
+      } else {
+        currentInput += operator;
+      }
+      display.innerText = currentInput;
+    }
+
+    function appendDot(dot) {
+      if (resultShown) {
+        currentInput = '0';
+        resultShown = false;
+      }
+      if (!currentInput.includes('.') || /[\+\-\*\/]$/.test(currentInput)) {
+        currentInput += dot;
+        display.innerText = currentInput;
+      }
+    }
+
+    function clearDisplay() {
+      currentInput = '';
+      display.innerText = '0';
+    }
+
+      function backspace() {
+        if (resultShown) {
+          currentInput = '';
+          resultShown = false;
+       } else {
+        currentInput = currentInput.slice(0, -1);
+      }
+     display.innerText = currentInput || '0';
+   }
+
+    function calculate() {
+      try {
+        let result = eval(currentInput); // You can replace with manual parsing if needed
+        display.innerText = result;
+        currentInput = result.toString();
+        resultShown = true;
+      } catch (e) {
+        display.innerText = 'Error';
+        currentInput = '';
+      }
+    }
+  </script>
+</body>
+</html>
