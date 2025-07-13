@@ -1,0 +1,65 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: #fdf6f0;
+  color: #555;
+  margin: 0; padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+.container {
+  background: #e2f0cb; /* pastel green */
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #f1d4d4;
+  width: 320px;
+}
+h2 {
+  text-align: center;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 18px 0;
+  border: 1px solid #b0c4b1;
+  border-radius: 7px;
+  box-sizing: border-box;
+}
+button {
+  background-color: #a0ced9; /* pastel blue */
+  border: none;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 7px;
+}
+button:hover {
+  background-color: #89bfcf;
+}
+.message {
+  background-color: #fefbd8; 
+  border: 1px solid #f1e4b3;
+  padding: 12px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  color: #6b6b47;
+  text-align: center;
+}
+.link {
+  text-align: center;
+  margin-top: 10px;
+}
+.link a {
+  color: #4a90e2;
+  text-decoration: none;
+  cursor: pointer;
+}
+.link a:hover {
+  text-decoration: underline;
+}

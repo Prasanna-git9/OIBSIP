@@ -1,0 +1,22 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1a1a1a; 
+}
+
+.text-red-che {
+    color: #EF4444; 
+}
+
+.bg-red-che {
+    background-color: #EF4444; 
+}
+
+.border-red-che {
+    border-color: #EF4444; 
+}
+
+.font-roboto-slab {
+    font-family: 'Roboto Slab', serif;
+}
+

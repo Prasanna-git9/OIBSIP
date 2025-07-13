@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f7f6f2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/* Calculator container */
+.calculator {
+  background: #f0e7f6; 
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(180, 160, 210, 0.5);
+  width: 320px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#display {
+  background: #fff9f9; 
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 2.5rem;
+  text-align: right;
+  color: #4a4a4a;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+  user-select: none;
+  min-height: 60px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 18px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  user-select: none;
+}
+
+.number {
+  background-color: #bde0fe; 
+  color: #1b2a49;
+}
+
+.number:hover {
+  background-color: #a1c9f1;
+}
+
+
+.operator {
+  background-color: #ffc8dd; 
+  color: #6a1b4d;
+}
+
+.operator:hover {
+  background-color: #ffabc1;
+}
+
+.clear {
+  background-color: #ffef96; 
+  color: #6a5d00;
+}
+
+.clear:hover {
+  background-color: #ffe566;
+}
+
+
+.delete {
+  background-color: #d0f4de; 
+  color: #276749;
+}
+
+.delete:hover {
+  background-color: #a6e3a1;
+}
+
+
+.equals {
+  background-color: #f6bd60; 
+  color: #63372c;
+  grid-column: span 1;
+}
+
+.equals:hover {
+  background-color: #e6a34f;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+
+.decimal {
+  background-color: #b5ead7; 
+  color: #105652;
+}
+
+.decimal:hover {
+  background-color: #8fd7be;
+}
+
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 90vw;
+  }
+  #display {
+    font-size: 2rem;
+  }
+  .btn {
+    font-size: 1.1rem;
+    padding: 14px 0;
+  }
+}

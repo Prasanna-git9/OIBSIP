@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pastel Login System</title>
+<link rel="stylesheet" href="styling.css" />
+</head>
+<body>
+
+<div class="container" id="registerPage">
+  <h2>Register</h2>
+  <div id="registerMessage" class="message" style="display:none;"></div>
+  <input type="text" id="registerUsername" placeholder="Username" />
+  <input type="password" id="registerPassword" placeholder="Password" />
+  <button id="registerBtn">Register</button>
+  <div class="link">
+    Already have an account? <a href="#" id="toLoginLink">Login here</a>
+  </div>
+</div>
+<div class="container" id="securedPage" style="display:none;">
+  <h2>Welcome, <span id="userDisplay"></span>!</h2>
+  <p>This is a secured page only accessible after login.</p>
+  <img id="securedImage" src="profilee.jpg.png" 
+       alt="Pastel scenery" style="width:100%; border-radius:10px; margin-bottom:15px;" />
+  <button id="logoutBtn">Logout</button>
+</div>
+
+
+<div class="container" id="loginPage" style="display:none;">
+  <h2>Login</h2>
+  <div id="loginMessage" class="message" style="display:none;"></div>
+  <input type="text" id="loginUsername" placeholder="Username" />
+  <input type="password" id="loginPassword" placeholder="Password" />
+  <button id="loginBtn">Login</button>
+  <div class="link">
+    Don't have an account? <a href="#" id="toRegisterLink">Register here</a>
+  </div>
+</div>
+
+<div class="container" id="securedPage" style="display:none;">
+  <h2>Welcome, <span id="userDisplay"></span>!</h2>
+  <p>This is a secured page only accessible after login.</p>
+  <button id="logoutBtn">Logout</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
